@@ -1,0 +1,29 @@
+{
+  "name": "fish-tail",
+  "version": "1.0.0",
+  "description": "backend for Fortnite Item Shop Helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lexscher/fish-tail.git"
+  },
+  "keywords": [
+    "Fortnite",
+    "Backend",
+    "NodeJS",
+    "Express",
+    "MERN",
+    "Node",
+    "JavaScript",
+    "JS"
+  ],
+  "author": "alexander schelchere",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lexscher/fish-tail/issues"
+  },
+  "homepage": "https://github.com/Lexscher/fish-tail#readme"
+}
