@@ -1,3 +1,4 @@
+# --- node|express
 # Logs
 logs
 *.log
@@ -107,3 +108,49 @@ dist
 .vscode-test
 
 .DS_Store
+
+# --- ts 
+ 
+ 
+ 
+*.csv
+*.dat
+*.out
+ 
+*.gz
+*.swp
+
+ 
+ 
+results
+tmp
+
+# Build
+public/css/main.css
+
+# Coverage reports
+ 
+
+# API keys and secrets
+ 
+
+# Dependency directory
+node_modules
+ 
+
+# Editors
+.idea
+*.iml
+
+# OS metadata
+ 
+Thumbs.db
+
+# Ignore built ts files
+dist/**/*
+
+# ignore yarn.lock
+yarn.lock
+
+# Backed files from sweep
+*.bak

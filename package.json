@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
+    "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +30,7 @@
   "homepage": "https://github.com/Lexscher/fish-tail#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "typescript": "^3.7.5"
   }
 }
