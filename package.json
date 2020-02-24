@@ -4,10 +4,9 @@
   "description": "backend for Fortnite Item Shop Helper",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./src/index.js",
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/index.ts",
-    "prod": "tsc && node ./src/index.js",
+    "prod": "tsc && nodemon --exec babel-node ./src/build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
