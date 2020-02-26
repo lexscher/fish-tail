@@ -47,6 +47,7 @@
     "@babel/register": "^7.8.3",
     "@types/chai": "^4.2.9",
     "@types/mocha": "^7.0.1",
+    "@types/supertest": "^2.0.8",
     "chai": "^4.2.0",
     "mocha": "^7.0.1",
     "supertest": "^4.0.2",
