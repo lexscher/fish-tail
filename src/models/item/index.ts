@@ -1,23 +1,23 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IItemDoc extends Document {
-    apiId: string,
-    lastUpdate: number,
-    isFeatured: boolean,
-    isRefundable: boolean,
-    cost: string,
-    name: string,
-    description: string,
-    type: string,
-    rarity: string,
-    iconImage: string,
-    featuredImage: string,
-    backgroundImage: string,
-    informationImage: string,
-    obtainedType: string,
-    avgStarts: number,
-    totalPoints: number,
-    numberVotes: number,
+  apiId: string;
+  lastUpdate: number;
+  isFeatured: boolean;
+  isRefundable: boolean;
+  cost: string;
+  name: string;
+  description: string;
+  type: string;
+  rarity: string;
+  iconImage: string;
+  featuredImage: string;
+  backgroundImage: string;
+  informationImage: string;
+  obtainedType: string;
+  avgStarts: number;
+  totalPoints: number;
+  numberVotes: number;
 }
 
 const ItemSchema = new Schema({
@@ -98,16 +98,19 @@ const ItemSchema = new Schema({
     trim: true,
     lowercase: true,
   },
-  avgStarts: { 
-      type: Number,
-      required: false,
-   },
-  totalPoints: { 
-      type: Number,
-      required: false,
-   },
-  numberVotes: { 
-      type: Number,
-      required: false,
-   },
+  avgStarts: {
+    type: Number,
+    required: false,
+  },
+  totalPoints: {
+    type: Number,
+    required: false,
+  },
+  numberVotes: {
+    type: Number,
+    required: false,
+  },
 });
+
+const Item = mongoose.model<IItemDoc>('Item', ItemSchema);
+export default Item;
