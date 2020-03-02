@@ -115,3 +115,6 @@ router.delete('/:id', async (req: Request, res: Response) => {
     res.send(errMessage);
   }
 });
+
+// export the router
+export default router;
