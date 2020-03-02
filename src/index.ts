@@ -22,8 +22,9 @@ server.get('/', (req: Request, res: Response) =>
 );
 
 // ROUTES
-const { user } = routes;
+const { user, item } = routes;
 server.use('/api/v1/users', user);
+server.use('/api/v1/items', item);
 
 // RUN SERVER
 const serverMessage = 'Sever is running on port ' + port;
