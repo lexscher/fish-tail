@@ -1,5 +1,25 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
+export interface IItemDoc extends Document {
+    apiId: string,
+    lastUpdate: number,
+    isFeatured: boolean,
+    isRefundable: boolean,
+    cost: string,
+    name: string,
+    description: string,
+    type: string,
+    rarity: string,
+    iconImage: string,
+    featuredImage: string,
+    backgroundImage: string,
+    informationImage: string,
+    obtainedType: string,
+    avgStarts: number,
+    totalPoints: number,
+    numberVotes: number,
+}
+
 const ItemSchema = new Schema({
   apiId: {
     type: String,
