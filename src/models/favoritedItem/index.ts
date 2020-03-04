@@ -1,3 +1,24 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import { Schema, Document, model } from 'mongoose';
 
-const TrackedItemSchema = new Schema({})
+export interface IFavoritedItemDoc extends Document {
+  user: Object;
+  item: Object;
+  tracked: boolean;
+}
+
+const FavoritedItemSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
+  item: {
+    type: Schema.Types.ObjectId,
+    ref: 'Item',
+  },
+  tracked: {
+    type: Boolean,
+    default: true,
+  },
+});
+
+export default model<IFavoritedItemDoc>('FavoritedItem', FavoritedItemSchema);
