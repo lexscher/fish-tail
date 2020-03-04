@@ -10,10 +10,12 @@ const FavoritedItemSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
+    required: true,
   },
   item: {
     type: Schema.Types.ObjectId,
     ref: 'Item',
+    required: true,
   },
   tracked: {
     type: Boolean,
