@@ -1,4 +1,12 @@
 # Fortnite Item Shop Helper (Back End)
 
-Find and save your favorite Fortnite skins, back bling, and wraps.
-Get notified as soon as they drop in the item shop!
+Check out the [front-end repo](https://github.com/Lexscher/fish)!
+
+## Technologies
+
+- NodeJS
+- Express
+- MongoDB Atlas
+- TypeScript
+- Mocha
+- Chai
