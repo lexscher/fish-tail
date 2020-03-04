@@ -103,9 +103,10 @@ router.delete('/:id', async (req: Request, res: Response) => {
     // grab id from params
     const { id } = await req.params;
     // find item
-    const item = Item.findById(id);
+    const item = Item.findByIdAndDelete(id);
     // send item to user
-    res.send('DELETED: ' + item);
+    const msg = 'Successfully deleted: ' + item;
+    res.send(msg);
   } catch (error) {
     // form message
     const errMessage = 'ERROR: ' + error;
