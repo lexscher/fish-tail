@@ -16,7 +16,7 @@
  */
 
 import { Router, Request, Response } from 'express';
-import itemModel from '../../models/item';
+import Item from '../../models/item';
 // use router
 const router = Router();
 
@@ -24,7 +24,7 @@ const router = Router();
 router.get('/', async (req: Request, res: Response) => {
   try {
     // grab all the items in our database
-    const items = await itemModel.find({});
+    const items = await Item.find({});
     // send items to client
     res.send(items);
   } catch (error) {
@@ -43,7 +43,7 @@ router.get('/:id', async (req: Request, res: Response) => {
     // grab id from params
     const { id } = await req.params;
     // find item using it's id
-    const item = await itemModel.findById(id);
+    const item = await Item.findById(id);
     // send item to client
     res.send(item);
   } catch (error) {
@@ -60,7 +60,7 @@ router.get('/:id', async (req: Request, res: Response) => {
 router.post('/', async (req: Request, res: Response) => {
   try {
     // create new item
-    const item = await itemModel.create(req.body);
+    const item = await Item.create(req.body);
     // send item to client
     res.send(item);
   } catch (error) {
@@ -82,7 +82,7 @@ router.patch('/:id', async (req: Request, res: Response) => {
       body,
     } = req;
     // find item
-    const item = await itemModel.findById(id);
+    const item = await Item.findById(id);
     // update item
     if (item) item.update(body);
     // send updated item to client
@@ -103,9 +103,10 @@ router.delete('/:id', async (req: Request, res: Response) => {
     // grab id from params
     const { id } = await req.params;
     // find item
-    const item = itemModel.findById(id);
+    const item = Item.findByIdAndDelete(id);
     // send item to user
-    res.send('DELETED: ' + item);
+    const msg = 'Successfully deleted: ' + item;
+    res.send(msg);
   } catch (error) {
     // form message
     const errMessage = 'ERROR: ' + error;

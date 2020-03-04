@@ -1,12 +1,12 @@
 import { Router, Request, Response } from 'express';
-import userModel from '../../models/user';
+import User from '../../models/user';
 
 const router = Router();
 
 // GET all users
 router.get('/', async (req: Request, res: Response) => {
   try {
-    const users = await userModel.find({});
+    const users = await User.find({});
     res.send(users);
   } catch (err) {
     res.status(500).send(err);
@@ -17,7 +17,7 @@ router.get('/', async (req: Request, res: Response) => {
 router.get('/:id', async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const user = await userModel.findById(id);
+    const user = await User.findById(id);
     res.send(user);
   } catch (err) {
     res.status(500).send(err);
@@ -27,7 +27,7 @@ router.get('/:id', async (req: Request, res: Response) => {
 // CREATE a user
 router.post('/', async (req: Request, res: Response) => {
   try {
-    const user = new userModel(req.body);
+    const user = new User(req.body);
     await user.save();
     res.send(user);
   } catch (err) {
@@ -42,7 +42,7 @@ router.patch('/:id', async (req: Request, res: Response) => {
       params: { id },
       body,
     } = req;
-    const user = await userModel.findById(id);
+    const user = await User.findById(id);
     if (user) user.update(body);
     res.send(user);
   } catch (err) {
@@ -53,7 +53,7 @@ router.patch('/:id', async (req: Request, res: Response) => {
 // DELETE a user
 router.delete('/:id', async (req: Request, res: Response) => {
   try {
-    const user = await userModel.findByIdAndDelete(req.params.id);
+    const user = await User.findByIdAndDelete(req.params.id);
     if (!user) res.status(404).send('Not Found');
   } catch (err) {
     res.status(500).send(err);
