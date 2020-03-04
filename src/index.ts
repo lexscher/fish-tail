@@ -22,9 +22,10 @@ server.get('/', (req: Request, res: Response) =>
 );
 
 // ROUTES
-const { user, item } = routes;
+const { user, item, favorite } = routes;
 server.use('/api/v1/users', user);
 server.use('/api/v1/items', item);
+server.use('/api/v1/favorites', favorite);
 
 // RUN SERVER
 const serverMessage = 'Sever is running on port ' + port;
